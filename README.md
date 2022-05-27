@@ -9,10 +9,12 @@ A rainfall animation for unix terminals written in python.
 Download the .deb file and run:
 `sudo dpkg -i rainfall.deb`
 
+uninstall with `sudo apt remove rainfall`
 
-## start and stop
+## how to use
 
 to initialize, run:
 `rainfall`
 
-to stop, CTRL+C
+to stop, `CTRL+C`
+
