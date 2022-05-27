@@ -1,6 +1,6 @@
 # rainfall
 
-A rainfall animation for unix terminals written in python.
+A rainfall animation for CLI / unix terminals written in python.
 
 ![](rainfall.gif?raw=true)
 
