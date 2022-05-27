@@ -1,0 +1,12 @@
+Package: rainfall
+Version: 0.01
+Architecture: all
+Maintainer: your name<your mail id>
+Installed-Size: 2
+Depends: dpkg (>= 1.16.1), python3.10
+Section: extras
+Priority: optional
+Homepage: your homepage
+Description: CLI ascii animation
+ Purely decorative
+
