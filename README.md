@@ -2,7 +2,7 @@
 
 A rainfall animation for unix terminals written in python.
 
-
+![](rainfall.gif?raw=true)
 
 ## installation
 
