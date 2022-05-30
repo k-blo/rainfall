@@ -26,6 +26,11 @@ Download [rainfall.rpm](rainfall.rpm?raw=true) and run:
 uninstall with `sudo dnf remove rainfall`
 
 
+### Arch
+
+Link to [AUR package](https://aur.archlinux.org/packages/rainfall)
+
+
 ### without installation
 
 Download [rainfall.py](source/rainfall.py?raw=true) and run
