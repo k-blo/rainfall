@@ -2,9 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import time
-import platform    # Used by clear_screen
-import subprocess  # Used by clear_screen
-
 import random
 import os
 import sys
@@ -20,13 +17,6 @@ colors = {
 
 def Colored(string, color):
     return ( colors[color] + string + colors["Reset"])
-
-
-# System independent clear screen function
-# https://stackoverflow.com/questions/18937058/#42877403
-def clear_screen():
-    command = "cls" if platform.system().lower()=="windows" else "clear"
-    return subprocess.call(command) == 0
 
 
 def new_drop():
@@ -101,7 +91,7 @@ if len(sys.argv) > 1:
     intensity = int(sys.argv[1])
 
 
-clear_screen()
+
 print('\033[?25l', end="") ## hides the cursor
 new_drop()
 
@@ -109,12 +99,16 @@ try:
     while True: 
         rain()
         time.sleep(0.08)
-        clear_screen()
+        print("\033[2J") # erase saved lines
+        print("\033[3J") # erase entire screen
+        print("\033[H") # moves cursor to home position
         weather_forecast()
 
 except KeyboardInterrupt:
-    clear_screen()
-    print('\033[?25h', end="")
+    print("\033[2J") # erase saved lines
+    print("\033[3J") # erase entire screen
+    print("\033[H") # moves cursor to home position
+    print('\033[?25h', end="") # makes cursor visible again
 
 
 
