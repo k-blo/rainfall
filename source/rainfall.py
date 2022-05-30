@@ -16,7 +16,8 @@ colors = {
 }
 
 def Colored(string, color):
-    return ( colors[color] + string + colors["Reset"])
+    return string if "-m" in sys.argv else ( colors[color] + string + colors["Reset"])
+    #return ( colors[color] + string + colors["Reset"])
 
 
 def new_drop():
@@ -71,7 +72,7 @@ def weather_forecast():
     weather += 1 
     if weather == 100:
         weather = 0
-        intensity += random.choice([0,-1,1])
+        intensity += random.choice([-1,1])
         if intensity < 1:
             intensity = 1
         if intensity > 10:
@@ -88,7 +89,8 @@ DROPSHAPES =["|", "│", "┃", "╽", "╿", "║", "┆", "┇", "┊", "┋",
 
 intensity = 1
 if len(sys.argv) > 1:
-    intensity = int(sys.argv[1])
+    intensity = (int(sys.argv[2]) if len(sys.argv)>2 else 1) if sys.argv[1]=="-m" else int(sys.argv[1])
+
 
 
 
