@@ -4,12 +4,15 @@ A rainfall animation for CLI / unix terminals written in python.
 
 ![](rainfall.gif?raw=true)
 
+The rain changes intensity over time.
+
+
 ## Installation
 
 
 ### Debian
 
-Download the [rainfall.deb](rainfall.deb?raw=true) file and run:
+Download [rainfall.deb](rainfall.deb?raw=true) and run:
 `sudo dpkg -i rainfall.deb`
 
 uninstall with `sudo apt remove rainfall`
@@ -17,7 +20,7 @@ uninstall with `sudo apt remove rainfall`
 
 ### Fedora
 
-Download the [rainfall.rpm](rainfall.rpm?raw=true) file and run:
+Download [rainfall.rpm](rainfall.rpm?raw=true) and run:
 `sudo rpm -i rainfall.rpm`
 
 uninstall with `sudo dnf remove rainfall`
@@ -25,13 +28,13 @@ uninstall with `sudo dnf remove rainfall`
 
 ### without installation
 
-download [rainfall.py](source/rainfall.py?raw=true) from the source folder, cd into your download directory and run
+Download [rainfall.py](source/rainfall.py?raw=true) and run
 `python3 rainfall.py` or just `rainfall.py`
 
 
-## how to use
+## How to use
 
-to initialize, run:
+to start, run:
 `rainfall`
 
 to stop, `CTRL+C`
