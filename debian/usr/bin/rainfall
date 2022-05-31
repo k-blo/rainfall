@@ -17,7 +17,6 @@ colors = {
 
 def Colored(string, color):
     return string if "-m" in sys.argv else ( colors[color] + string + colors["Reset"])
-    #return ( colors[color] + string + colors["Reset"])
 
 
 def new_drop():
