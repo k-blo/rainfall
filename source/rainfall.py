@@ -7,11 +7,26 @@ import os
 import sys
 
 
-
-# ANSI escape codes
 colors = {
-    "Blue": "\u001b[34m",
-    "Bright Blue": "\u001b[34;1m",
+    "black": "\u001b[30m",
+    "red": "\u001b[31m",
+    "green": "\u001b[32m",
+    "yellow": "\u001b[33m",
+    "blue": "\u001b[34m",
+    "magenta": "\u001b[35m",
+    "cyan": "\u001b[36m",
+    "white": "\u001b[37m",
+    "reset": "\u001b[0m",
+
+    "b_black": "\u001b[30;1m",
+    "b_red": "\u001b[31;1m",
+    "b_green": "\u001b[32;1m",
+    "b_yellow": "\u001b[33;1m",
+    "b_blue": "\u001b[34;1m",
+    "b_magenta": "\u001b[35;1m",
+    "b_cyan": "\u001b[36;1m",
+    "b_white": "\u001b[37;1m",
+
     "Reset": "\u001b[0m",
 }
 
@@ -19,10 +34,29 @@ def Colored(string, color):
     return string if "-m" in sys.argv else ( colors[color] + string + colors["Reset"])
 
 
-def new_drop():
+def Clear_Screen():
+    print("\033[2J") # erase saved lines
+    print("\033[3J") # erase entire screen
+    print("\033[H") # moves cursor to home position
+
+
+def Get_Arguments():
+    args_dict = {"colors": []}
+    if sys.argv:
+        for arg in sys.argv:
+            if "-i=" in arg:
+                args_dict["intensity"] = int(arg.split("-i=")[1])
+            if arg in colors:
+                args_dict["colors"].append(arg)
+    if not args_dict["colors"]:
+        del args_dict["colors"]
+    return args_dict
+
+
+def New_Drop():
     for i in range(intensity):
         shape = random.choice(DROPSHAPES)
-        color = random.choice(["Blue", "Bright Blue"])
+        color = random.choice(drop_colors)
 
         raindrop = {
             "shape": Colored(shape, color),
@@ -31,7 +65,7 @@ def new_drop():
         }
         rainfall.append(raindrop)
 
-def rain():
+def Rain():
     ## iterate over every line
     for i in range(ymax):
         line = " "*xmax
@@ -54,17 +88,17 @@ def rain():
 
         ## once a raindrop reaches the ground, they splash
         if raindrop["y"] > ymax-2:
-            raindrop["shape"] = Colored("o", random.choice(["Blue", "Bright Blue"]))
+            raindrop["shape"] = Colored("o", random.choice(drop_colors))
 
         # raindrops outside the window evaporate
         if raindrop["y"] > ymax:
             rainfall.remove(raindrop)
 
-    new_drop()
+    New_Drop()
 
 
 
-def weather_forecast():
+def Weather_Forecast():
     global weather
     global intensity
 
@@ -80,35 +114,30 @@ def weather_forecast():
 
 size = os.get_terminal_size()
 xmax = size.columns 
-ymax = int(size.lines * 0.6)
+ymax = int(size.lines)
 
 weather = 0
 rainfall = []
 DROPSHAPES =["|", "│", "┃", "╽", "╿", "║", "┆", "┇", "┊", "┋", "╵", "╹", "╻"]
 
-intensity = 1
-if len(sys.argv) > 1:
-    intensity = (int(sys.argv[2]) if len(sys.argv)>2 else 1) if sys.argv[1]=="-m" else int(sys.argv[1])
-
+args = Get_Arguments()
+intensity = args.get("intensity", 1)
+drop_colors = args.get("colors", ["blue", "b_blue"])
 
 
 
 print('\033[?25l', end="") ## hides the cursor
-new_drop()
+New_Drop()
 
 try:
     while True: 
-        rain()
+        Rain()
         time.sleep(0.08)
-        print("\033[2J") # erase saved lines
-        print("\033[3J") # erase entire screen
-        print("\033[H") # moves cursor to home position
-        weather_forecast()
+        Clear_Screen()
+        Weather_Forecast()
 
 except KeyboardInterrupt:
-    print("\033[2J") # erase saved lines
-    print("\033[3J") # erase entire screen
-    print("\033[H") # moves cursor to home position
+    Clear_Screen()
     print('\033[?25h', end="") # makes cursor visible again
 
 
