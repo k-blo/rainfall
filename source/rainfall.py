@@ -46,6 +46,8 @@ def Get_Arguments():
         for arg in sys.argv:
             if "-i=" in arg:
                 args_dict["intensity"] = int(arg.split("-i=")[1])
+            if "-t=" in arg:
+                args_dict["timing"] = float(arg.split("-t=")[1])
             if arg in colors:
                 args_dict["colors"].append(arg)
     if not args_dict["colors"]:
@@ -122,6 +124,7 @@ DROPSHAPES =["|", "│", "┃", "╽", "╿", "║", "┆", "┇", "┊", "┋",
 
 args = Get_Arguments()
 intensity = args.get("intensity", 1)
+timing = args.get("timing", 0.08)
 drop_colors = args.get("colors", ["blue", "b_blue"])
 
 
@@ -132,7 +135,7 @@ New_Drop()
 try:
     while True:
         Rain()
-        time.sleep(0.08)
+        time.sleep(timing)
         Clear_Screen()
         Weather_Forecast()
 

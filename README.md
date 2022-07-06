@@ -47,6 +47,10 @@ to stop, `CTRL+C`
 make light or heavy rain by adding a parameter between 1-10:
 `rainfall -i=10`
 
+change the speed of frame re-rendering in seconds:
+`rainfall -t=0.12`
+the default is `0.08`
+
 monochrome option:
 `rainfall -m`
 
