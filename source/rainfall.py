@@ -75,16 +75,16 @@ def Rain():
         this_line_raindrops.sort(key=lambda y: y["x"])
         this_line_raindrops.reverse()
 
-        ## insert new drops and shift existing drops 
+        ## insert new drops and shift existing drops
         for raindrop in this_line_raindrops:
             x = raindrop["x"]
             line = line[:x] + raindrop["shape"] +line[x:]
-                
+
         print(line)
 
     ### update raindrop positions
     for raindrop in rainfall:
-        raindrop["y"] += 1 
+        raindrop["y"] += 1
 
         ## once a raindrop reaches the ground, they splash
         if raindrop["y"] > ymax-2:
@@ -102,7 +102,7 @@ def Weather_Forecast():
     global weather
     global intensity
 
-    weather += 1 
+    weather += 1
     if weather == 100:
         weather = 0
         intensity += random.choice([-1,1])
@@ -113,7 +113,7 @@ def Weather_Forecast():
 
 
 size = os.get_terminal_size()
-xmax = size.columns 
+xmax = size.columns
 ymax = int(size.lines)
 
 weather = 0
@@ -130,7 +130,7 @@ print('\033[?25l', end="") ## hides the cursor
 New_Drop()
 
 try:
-    while True: 
+    while True:
         Rain()
         time.sleep(0.08)
         Clear_Screen()
