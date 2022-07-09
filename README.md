@@ -45,7 +45,7 @@ to start, run:
 to stop, `CTRL+C`
 
 make light or heavy rain by adding a parameter between 1-10:
-`rainfall i=10`
+`rainfall -i=10`
 
 monochrome option:
 `rainfall -m`
