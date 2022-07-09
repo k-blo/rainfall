@@ -12,7 +12,7 @@ The rain changes intensity over time.
 
 ### Debian
 
-Download [rainfall.deb](https://github.com/alpin111/rainfall/releases/download/v0.3/rainfall.deb) and run:
+Download [rainfall.deb](https://github.com/alpin111/rainfall/releases/download/v0.4/rainfall.deb) and run:
 `sudo dpkg -i rainfall.deb`
 
 uninstall with `sudo apt remove rainfall`
@@ -20,7 +20,7 @@ uninstall with `sudo apt remove rainfall`
 
 ### Fedora
 
-Download [rainfall.rpm](https://github.com/alpin111/rainfall/releases/download/v0.3/rainfall.rpm) and run:
+Download [rainfall.rpm](https://github.com/alpin111/rainfall/releases/download/v0.4/rainfall.rpm) and run:
 `sudo rpm -i rainfall.rpm`
 
 uninstall with `sudo dnf remove rainfall`
@@ -82,6 +82,6 @@ b_white
 
 ## unofficial contributors
 
-- Jonatha Gabriel[j0ng4b](https://github.com/j0ng4b)
+- Jonatha Gabriel [j0ng4b](https://github.com/j0ng4b)
 - reddit [r/unixporn](https://old.reddit.com/r/unixporn/comments/v0vadk/oc_rain_animation_for_cli_that_changes_intensity/)
 
