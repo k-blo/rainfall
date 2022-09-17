@@ -30,6 +30,8 @@ uninstall with `sudo dnf remove rainfall`
 
 Link to [AUR package](https://aur.archlinux.org/packages/rainfall)
 
+`yay -S rainfall`
+
 
 ### without installation
 
