@@ -3,7 +3,7 @@ Version: 0.01
 Architecture: all
 Maintainer: https://github.com/alpin111
 Installed-Size: 2
-Depends: dpkg (>= 1.16.1), python3.10
+Depends: dpkg (>= 1.16.1), python3
 Section: extras
 Priority: optional
 Homepage: https://github.com/alpin111/rainfall

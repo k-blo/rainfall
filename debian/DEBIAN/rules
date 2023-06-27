@@ -1,4 +1,4 @@
 #!/usr/bin/make -f
 
 %:
-	dh $@ --with python-virtualenv --python /usr/bin/python3.10
+	dh $@ --with python-virtualenv --python /usr/bin/python3
