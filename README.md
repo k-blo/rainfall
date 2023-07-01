@@ -12,7 +12,7 @@ The rain changes intensity over time.
 
 ### Debian
 
-Download [rainfall.deb](https://github.com/alpin111/rainfall/releases/download/v0.4/rainfall.deb) and run:
+Download [rainfall.deb](https://github.com/alpin111/rainfall/releases/download/v1.0.1/rainfall_1.0.1_amd64.deb) and run:
 `sudo dpkg -i rainfall.deb`
 
 uninstall with `sudo apt remove rainfall`
@@ -20,7 +20,7 @@ uninstall with `sudo apt remove rainfall`
 
 ### Fedora
 
-Download [rainfall.rpm](https://github.com/alpin111/rainfall/releases/download/v0.4/rainfall.rpm) and run:
+Download [rainfall.rpm](https://github.com/alpin111/rainfall/releases/download/v1.0.1/rainfall-1.0.1-1.el7.x86_64.rpm) and run:
 `sudo rpm -i rainfall.rpm`
 
 uninstall with `sudo dnf remove rainfall`
