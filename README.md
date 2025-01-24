@@ -85,5 +85,4 @@ b_white
 ## unofficial contributors
 
 - Jonatha Gabriel [j0ng4b](https://github.com/j0ng4b)
-- reddit [r/unixporn](https://old.reddit.com/r/unixporn/comments/v0vadk/oc_rain_animation_for_cli_that_changes_intensity/)
 
